@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/22 16:49:06 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/23 17:09:38 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+
+# define INT_MAX	2147483647
+# define INT_MIN	-2147483648
 
 typedef struct s_list
 {
@@ -38,5 +41,13 @@ int	word_count(char const *s, char c);
 int	word_len(char const *s, char c);
 char	**ft_split(char const *s, char c);
 long long	ft_atol(const char *str);
+
+/* push_swap.c */
+void	print_error_msg(char *str);
+
+/* stack.c */
+void	stack_init(t_stack *stack);
+void	push(int value, t_stack *stack);
+void	pop(t_stack *stack);
 
 #endif

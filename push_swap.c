@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/22 17:21:07 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/23 17:07:37 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,14 @@ void	check_duplicate(t_stack *stack_a, int value)
 	int		index;
 
 	search = stack_a->head;
-	printf("search->value : %d\n", search->value);
-	while (search->prev != stack_a->head)
+	/*while (search->prev != stack_a->head)
 	{
+		//printf("search->value : %d\n", search->value);
+		//printf("head->value : %d\n", stack_a->head->value);
 		if (search->value == value)
 			print_error_msg("error\ncheck_duplicate\n");
 		search = search->next;
-	}
-}
-
-void	push(int value, t_stack *stack_a)
-{
-	t_list	*new;
-
-	new = (t_list *)malloc(sizeof(t_list));
-	if (new == NULL)
-		print_error_msg("error\npush\n");
-	new->value = value;
-	new->prev = stack_a->curr;
-	new->next = stack_a->head;
-	printf("new->value : %d\n", new->value);
-	stack_a->head->prev = new;
-	stack_a->curr->next = new;
-	stack_a->curr = new;
+	}*/
 }
 
 void	add_index(t_stack *stack_a)
@@ -74,18 +59,8 @@ int	main(int argc, char **argv)
 	int		value;
 	int		i;
 	int		j;
-	t_list	*head;
-	t_list	*curr;	
-	
-	stack_a = (t_stack *)malloc(sizeof(t_stack));
-	head = (t_list *)malloc(sizeof(t_list));
-	curr = (t_list *)malloc(sizeof(t_list));
-	//printf("head : %d\n", head->value);
-	//printf("curr : %d\n", curr->value);	
-	stack_a->head = head;
-	stack_a->curr = curr;
-	//printf("head : %d\n", stack_a->head->value);
-	//printf("curr : %d\n", stack_a->curr->value);
+
+	stack_init(stack_a);
 	i = 1;
 	while (i <argc)
 	{
@@ -95,14 +70,18 @@ int	main(int argc, char **argv)
 		{
 			is_num(tmp[j]);
 			value = ft_atol(tmp[j]);
-			if (value < -2147483648 || value > 2147483647)
+			if (value < INT_MIN || value > INT_MAX)
 				print_error_msg("error\nint\n");
-			//printf("value : %d\n", value);
 			push(value, stack_a);
-			//check_duplicate(stack_a, value);
+			check_duplicate(stack_a, value);
 			j++;
 		}
 		i++;
 	}
+	free(tmp);
+		// printf("%d\n", stack_a->curr->prev->value);
+		// printf("%d\n", stack_a->curr->value);
+		// printf("%d\n", stack_a->curr->next->value);
+		//printf("%d\n", stack_a->curr->next->value);
 	return (0);
 }
