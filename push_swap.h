@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/23 17:09:38 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/23 20:59:07 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef	struct s_stack
 {
 	t_list	*head;
 	t_list	*curr;
+	int		size;
 }	t_stack;
 
 
@@ -47,6 +48,7 @@ void	print_error_msg(char *str);
 
 /* stack.c */
 void	stack_init(t_stack *stack);
+void	insert_first_node(t_stack *stack, int value);
 void	push(int value, t_stack *stack);
 void	pop(t_stack *stack);
 
