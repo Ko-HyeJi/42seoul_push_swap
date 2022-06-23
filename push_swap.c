@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/23 21:16:00 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/23 22:06:47 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	is_num(char *str)
 	}
 }
 
-void	check_duplicate(t_stack *stack, int value)
+void	check_duplicate_and_indexing(t_stack *stack, int value)
 {
 	t_list	*search;
 
@@ -40,35 +40,12 @@ void	check_duplicate(t_stack *stack, int value)
 	{
 		if (search->value == value)
 			print_error_msg("error\ncheck_duplicate");
-		else
-			search = search->next;
-	}
-}
-
-void	add_index(t_stack *stack)
-{
-	t_list	*search;
-	t_list	*min;
-	int		i;
-
-	search = (t_list *)malloc(sizeof(t_list));
-	search = stack->head;
-	min = (t_list *)malloc(sizeof(t_list));
-	min->value = INT_MAX;
-	min->index = 0;
-	i = 0;
-	while (i < stack->size)
-	{
-		while (search->prev != stack->head)
-		{
-			if (search->value < min->value)
-			{
-			
-			}
-		}
+		else if (search->value < value)
+			stack->curr->index++;
+		else if (search->value > value)
+			search->index++;
 		search = search->next;
 	}
-	i++;
 }
 
 void	insert_first_node(t_stack *stack, int value)
@@ -130,13 +107,12 @@ int	main(int argc, char **argv)
 				insert_first_node(stack_a, value);
 			else
 				push(value, stack_a);
-			check_duplicate(stack_a, value);
+			check_duplicate_and_indexing(stack_a, value);
 			stack_a->size++;
 			j++;
 		}
 		i++;
 	}
-	add_index(stack_a);
 	free(tmp);
 	return (0);
 }
