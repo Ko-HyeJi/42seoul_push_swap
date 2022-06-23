@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/23 22:07:05 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/23 22:19:23 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ long long	ft_atol(const char *str);
 void	print_error_msg(char *str);
 
 /* stack.c */
-void	stack_init(t_stack *stack);
+t_stack	*stack_init(void);
+void	is_num(char *str);
+void	check_duplicate_and_indexing(t_stack *stack, int value);
 void	insert_first_node(t_stack *stack, int value);
-void	push(int value, t_stack *stack);
-void	pop(t_stack *stack);
+void	push(t_stack *stack, int value);
+//void	pop(t_stack *stack);
 
 #endif
