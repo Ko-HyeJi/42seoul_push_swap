@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/23 22:19:23 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/24 15:09:42 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@
 typedef struct s_list
 {
 	int				index;
-	int				value;
+	int				data;
 	struct s_list	*prev;
 	struct s_list	*next;
 }	t_list;
 
 typedef	struct s_stack
 {
-	t_list	*head;
-	t_list	*curr;
+	t_list	*btm;
+	t_list	*top;
 	int		size;
 }	t_stack;
 
@@ -49,9 +49,9 @@ void	print_error_msg(char *str);
 /* stack.c */
 t_stack	*stack_init(void);
 void	is_num(char *str);
-void	check_duplicate_and_indexing(t_stack *stack, int value);
-void	insert_first_node(t_stack *stack, int value);
-void	push(t_stack *stack, int value);
-//void	pop(t_stack *stack);
+void	check_duplicate_and_indexing(t_stack *stack, int data);
+void	insert_first_node(t_stack *stack, int data);
+void	push(t_stack *stack, int data);
+int		pop(t_stack *stack);
 
 #endif

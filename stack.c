@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:30:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/23 22:19:15 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/24 15:06:03 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_stack	*stack_init(void)
 	t_stack	*stack;
 	
 	stack = (t_stack *)malloc(sizeof(t_stack));
-	stack->head = (t_list *)malloc(sizeof(t_list));
-	stack->curr = (t_list *)malloc(sizeof(t_list));
+	stack->btm = (t_list *)malloc(sizeof(t_list));
+	stack->top = (t_list *)malloc(sizeof(t_list));
 
 	return (stack);
 }
@@ -36,48 +36,59 @@ void	is_num(char *str)
 	}
 }
 
-void	check_duplicate_and_indexing(t_stack *stack, int value)
+void	check_duplicate_and_indexing(t_stack *stack, int data)
 {
-	t_list	*search;
+	t_list	*curr;
 
-	search = stack->head;
-	while (search->next != stack->head)
+	curr = stack->btm;
+	while (curr->next != stack->btm)
 	{
-		if (search->value == value)
+		if (curr->data == data)
 			print_error_msg("error\ncheck_duplicate");
-		else if (search->value < value)
-			stack->curr->index++;
-		else if (search->value > value)
-			search->index++;
-		search = search->next;
+		else if (curr->data < data)
+			stack->top->index++;
+		else if (curr->data > data)
+			curr->index++;
+		curr = curr->next;
 	}
 }
 
-void	insert_first_node(t_stack *stack, int value)
+void	insert_first_node(t_stack *stack, int data)
 {
-	t_list *new;
+	t_list *node;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (new == NULL)
+	node = (t_list *)malloc(sizeof(t_list));
+	if (node == NULL)
 		print_error_msg("error\nfirst_node");
-	new->value = value;
-	new->prev = new;
-	new->next = new;
-	stack->head = new;
-	stack->curr = new;
+	node->data = data;
+	node->prev = node;
+	node->next = node;
+	stack->btm = node;
+	stack->top = node;
 }
 
-void	push(t_stack *stack, int value)
+void	push(t_stack *stack, int data)
 {
-	t_list	*new;
+	t_list	*node;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (new == NULL)
+	node = (t_list *)malloc(sizeof(t_list));
+	if (node == NULL)
 		print_error_msg("error\npush");
-	new->value = value;
-	new->prev = stack->curr;
-	new->next = stack->head;
-	stack->head->prev = new;
-	stack->curr->next = new;
-	stack->curr = new;
+	node->data = data;
+	node->prev = stack->top;
+	node->next = stack->btm;
+	stack->btm->prev = node;
+	stack->top->next = node;
+	stack->top = node;
+}
+
+int	pop(t_stack *stack)
+{
+	int	ret;
+
+	ret = stack->top->data;
+	stack->top = stack->top->prev;
+	stack->btm->prev = stack->top;
+	stack->top->next = stack->btm;
+	return (ret);
 }
