@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/24 23:15:43 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/24 23:34:49 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	main(int argc, char **argv)
 
 	stack_a = stack_init();
 	stack_b = stack_init();
-
 	if (argc < 2)
 		print_error_msg("error\nneed data");
 	
@@ -68,16 +67,24 @@ int	main(int argc, char **argv)
 			else
 				push(stack_a, data);
 			check_duplicate_and_indexing(stack_a, data);
-			stack_a->size++;
 			j++;
 		}
 		free(tmp);
 		i++;
 	}
-	// pb(stack_a, stack_b);
-	// pb(stack_a, stack_b);
-	// pb(stack_a, stack_b);
-	rrr(stack_a, stack_b);
+	sa(stack_a);
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	ra(stack_a);
+	rb(stack_b);
+	rra(stack_a);
+	rrb(stack_b);
+	sa(stack_a);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
+	pa(stack_a, stack_b);
+		
 	printf("stack_a : \n");
 	print_stack(stack_a);
 	printf("\n");

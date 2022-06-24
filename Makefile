@@ -6,9 +6,9 @@
 #    By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 19:49:42 by hyko              #+#    #+#              #
-#    Updated: 2022/06/24 16:43:58 by hyko             ###   ########.fr        #
+#    Updated: 2022/06/24 23:20:04 by hyko             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all :
-	gcc push_swap.c push_swap_utils.c stack.c operation.c
+	gcc push_swap.c push_swap_utils.c stack.c operation.c ft_split.c
