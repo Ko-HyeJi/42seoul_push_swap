@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/24 23:34:49 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/25 00:34:50 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,23 +72,23 @@ int	main(int argc, char **argv)
 		free(tmp);
 		i++;
 	}
-	sa(stack_a);
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	ra(stack_a);
-	rb(stack_b);
-	rra(stack_a);
-	rrb(stack_b);
-	sa(stack_a);
-	pa(stack_a, stack_b);
-	pa(stack_a, stack_b);
-	pa(stack_a, stack_b);
+	// sa(stack_a);
+	// pb(stack_a, stack_b);
+	// pb(stack_a, stack_b);
+	// pb(stack_a, stack_b);
+	// ra(stack_a);
+	// rb(stack_b);
+	// rra(stack_a);
+	// rrb(stack_b);
+	// sa(stack_a);
+	// pa(stack_a, stack_b);
+	// pa(stack_a, stack_b);
+	// pa(stack_a, stack_b);
 		
-	printf("stack_a : \n");
-	print_stack(stack_a);
-	printf("\n");
-	printf("stack_b : \n");
-	print_stack(stack_b);
+	// printf("stack_a : \n");
+	// print_stack(stack_a);
+	// printf("\n");
+	// printf("stack_b : \n");
+	// print_stack(stack_b);
 	return (0);
 }

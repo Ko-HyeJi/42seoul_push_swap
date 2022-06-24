@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:15:43 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/24 23:13:01 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/25 00:27:00 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	t_list	*node;
 
-	node = pop(stack_b);
 	if (stack_b->top != NULL)
 	{
+		node = pop(stack_b);
 		if (stack_a->top == NULL)
 		{
 			node->prev = node;
@@ -66,17 +66,21 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 			stack_a->top->prev = node;
 			stack_a->top = node;
 		}
-		
+	}
+	if (stack_a->top == stack_b->top)
+	{
+		stack_b->top = NULL;
+		stack_b->btm = NULL;
 	}
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	t_list	*node;
-
-	node = pop(stack_a);
+	
 	if (stack_a->top != NULL)
 	{
+		node = pop(stack_a);
 		if (stack_b->top == NULL)
 		{
 			node->prev = node;
@@ -92,6 +96,11 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 			stack_b->top->prev = node;
 			stack_b->top = node;
 		}	
+	}
+	if (stack_a->top == stack_b->top)
+	{
+		stack_a->top = NULL;
+		stack_a->btm = NULL;
 	}
 }
 
