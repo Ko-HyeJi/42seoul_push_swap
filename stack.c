@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:30:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/24 15:06:03 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/24 17:39:43 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ t_stack	*stack_init(void)
 	t_stack	*stack;
 	
 	stack = (t_stack *)malloc(sizeof(t_stack));
-	stack->btm = (t_list *)malloc(sizeof(t_list));
 	stack->top = (t_list *)malloc(sizeof(t_list));
-
+	stack->btm = (t_list *)malloc(sizeof(t_list));
+	stack->top = NULL;
+	stack->btm = NULL;
 	return (stack);
 }
 
@@ -40,13 +41,13 @@ void	check_duplicate_and_indexing(t_stack *stack, int data)
 {
 	t_list	*curr;
 
-	curr = stack->btm;
-	while (curr->next != stack->btm)
+	curr = stack->top;
+	while (curr->next != stack->top)
 	{
 		if (curr->data == data)
 			print_error_msg("error\ncheck_duplicate");
 		else if (curr->data < data)
-			stack->top->index++;
+			stack->btm->index++;
 		else if (curr->data > data)
 			curr->index++;
 		curr = curr->next;
@@ -63,8 +64,8 @@ void	insert_first_node(t_stack *stack, int data)
 	node->data = data;
 	node->prev = node;
 	node->next = node;
-	stack->btm = node;
 	stack->top = node;
+	stack->btm = node;
 }
 
 void	push(t_stack *stack, int data)
@@ -75,20 +76,20 @@ void	push(t_stack *stack, int data)
 	if (node == NULL)
 		print_error_msg("error\npush");
 	node->data = data;
-	node->prev = stack->top;
-	node->next = stack->btm;
-	stack->btm->prev = node;
-	stack->top->next = node;
-	stack->top = node;
+	node->next = stack->top;
+	node->prev = stack->btm;
+	stack->top->prev = node;
+	stack->btm->next = node;
+	stack->btm = node;
 }
 
-int	pop(t_stack *stack)
+t_list	*pop(t_stack *stack)
 {
-	int	ret;
+	t_list	*ret;
 
-	ret = stack->top->data;
-	stack->top = stack->top->prev;
-	stack->btm->prev = stack->top;
-	stack->top->next = stack->btm;
+	ret = stack->top;
+	stack->top = stack->top->next;
+	stack->top->prev = stack->btm;
+	stack->btm->next = stack->top;
 	return (ret);
 }

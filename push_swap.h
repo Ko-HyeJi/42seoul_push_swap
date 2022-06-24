@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/24 15:09:42 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/24 17:33:10 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ typedef struct s_list
 
 typedef	struct s_stack
 {
-	t_list	*btm;
 	t_list	*top;
+	t_list	*btm;
 	int		size;
 }	t_stack;
 
@@ -52,6 +52,19 @@ void	is_num(char *str);
 void	check_duplicate_and_indexing(t_stack *stack, int data);
 void	insert_first_node(t_stack *stack, int data);
 void	push(t_stack *stack, int data);
-int		pop(t_stack *stack);
+t_list	*pop(t_stack *stack);
+
+/* operation.c */
+void	sa(t_stack *stack_a);
+void	sb(t_stack *stack_b);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+void	ra(t_stack *stack_a);
+void	rb(t_stack *stack_b);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rra(t_stack *stack_a);
+void	rrb(t_stack *stack_b);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
 
 #endif
