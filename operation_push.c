@@ -1,48 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation.c                                        :+:      :+:    :+:   */
+/*   operation_push.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/24 15:15:43 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/25 00:27:00 by hyko             ###   ########.fr       */
+/*   Created: 2022/06/25 00:59:23 by hyko              #+#    #+#             */
+/*   Updated: 2022/06/25 01:01:17 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	sa(t_stack *stack_a)
-{
-	int	tmp_d;
-	int	tmp_i;
-
-	tmp_d = stack_a->top->data;
-	stack_a->top->data = stack_a->top->next->data;
-	stack_a->top->next->data = tmp_d;
-	tmp_i = stack_a->top->index;
-	stack_a->top->index = stack_a->top->next->index;
-	stack_a->top->next->index = tmp_i;
-}
-
-void	sb(t_stack *stack_b)
-{
-	int	tmp_d;
-	int	tmp_i;
-
-	tmp_d = stack_b->top->data;
-	stack_b->top->data = stack_b->top->next->data;
-	stack_b->top->next->data = tmp_d;
-	tmp_i = stack_b->top->index;
-	stack_b->top->index = stack_b->top->next->index;
-	stack_b->top->next->index = tmp_i;	
-}
-
-void	ss(t_stack *stack_a, t_stack *stack_b)
-{
-	sa(stack_a);
-	sb(stack_b);
-}
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
@@ -102,52 +70,4 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 		stack_a->top = NULL;
 		stack_a->btm = NULL;
 	}
-}
-
-void	ra(t_stack *stack_a)
-{
-	if (stack_a->top != NULL)
-	{
-		stack_a->btm = stack_a->top;
-		stack_a->top = stack_a->top->next;
-	}
-}
-
-void	rb(t_stack *stack_b)
-{
-	if (stack_b->top != NULL)
-	{
-		stack_b->btm = stack_b->top;
-		stack_b->top = stack_b->top->next;
-	}
-}
-
-void	rr(t_stack *stack_a, t_stack *stack_b)
-{
-	ra(stack_a);
-	rb(stack_b);
-}
-
-void	rra(t_stack *stack_a)
-{
-	if (stack_a->top != NULL)
-	{
-		stack_a->top = stack_a->btm;
-		stack_a->btm = stack_a->btm->prev;
-	}
-}
-
-void	rrb(t_stack *stack_b)
-{
-	if (stack_b->top != NULL)
-	{
-		stack_b->top = stack_b->btm;
-		stack_b->btm = stack_b->btm->prev;
-	}
-}
-
-void	rrr(t_stack *stack_a, t_stack *stack_b)
-{
-	rra(stack_a);
-	rrb(stack_b);
 }
