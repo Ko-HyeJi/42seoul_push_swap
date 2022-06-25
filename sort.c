@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:25:42 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/25 21:02:22 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/26 01:59:09 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	a_to_b(t_stack *stack_a, t_stack *stack_b)
 	size = stack_a->size;
 	num = 0;
 	chunk = (0.000000053 * size * size) + (0.03 * size) + 14.5;
-	//printf("chunk : %d\n", chunk);
 	while (stack_a->top != NULL)
 	{
 		if (stack_a->top->index < num)
@@ -42,17 +41,30 @@ void	a_to_b(t_stack *stack_a, t_stack *stack_b)
 void	b_to_a(t_stack *stack_a, t_stack *stack_b)
 {
 	int	num;
+	t_list	*curr;
+	int	cnt;
 	
 	num = stack_a->size - 1;
-	// printf("%d\n", num);
 	while (stack_b->top != NULL)
 	{
-		if (stack_b->top->index < stack_b->btm->index)
-			rrb(stack_b);
-		if (stack_b->top->index == num)
+		curr = stack_b->top;
+		cnt = 1;
+		while (curr->index != num)
 		{
-			pa(stack_a, stack_b);
-			num--;
+			curr = curr->next;
+			cnt++;
 		}
+		if (cnt <= num / 2)
+		{
+			while (stack_b->top->index != num)
+				rb(stack_b);
+		}
+		else if (cnt > num / 2)
+		{
+			while (stack_b->top->index != num)
+				rrb(stack_b);
+		}
+		pa(stack_a, stack_b);
+		num--;
 	}
 }

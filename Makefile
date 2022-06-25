@@ -6,9 +6,11 @@
 #    By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 19:49:42 by hyko              #+#    #+#              #
-#    Updated: 2022/06/25 16:56:53 by hyko             ###   ########.fr        #
+#    Updated: 2022/06/26 01:36:47 by hyko             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME = push_swap
 
 SRCS = push_swap.c\
 push_swap_utils.c\
