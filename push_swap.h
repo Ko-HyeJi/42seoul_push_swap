@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/24 23:21:41 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/25 16:20:34 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 
 # define INT_MAX	2147483647
 # define INT_MIN	-2147483648

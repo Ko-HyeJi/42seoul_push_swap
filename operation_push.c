@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 00:59:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/25 01:01:17 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/25 16:19:11 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
+	write(1, "pa\n", 3);
 	t_list	*node;
 
 	if (stack_b->top != NULL)
@@ -44,6 +45,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
+	write(1, "pb\n", 3);
 	t_list	*node;
 	
 	if (stack_a->top != NULL)
