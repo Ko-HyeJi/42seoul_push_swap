@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/25 16:24:35 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/25 21:16:29 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,32 +67,13 @@ int	main(int argc, char **argv)
 			else
 				push(stack_a, data);
 			check_duplicate_and_indexing(stack_a, data);
+			stack_a->size++;
 			j++;
 		}
 		free(tmp);
 		i++;
 	}
-	sa(stack_a);
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	// ra(stack_a);
-	// rb(stack_b);
-	rr(stack_a, stack_b);
-	// rra(stack_a);
-	// rrb(stack_b);
-	rrr(stack_a, stack_b);
-	sa(stack_a);
-	pa(stack_a, stack_b);
-	pa(stack_a, stack_b);
-	pa(stack_a, stack_b);
-		
-	// printf("stack_a : \n");
-	// print_stack(stack_a);
-	// printf("\n");
-	// printf("stack_b : \n");
-	// print_stack(stack_b);
-
-	//printf("sa\npb\npb\npb\nra\nrb\nrra\nrrb\nsa\npa\npa\npa\n");
+	a_to_b(stack_a, stack_b);
+	b_to_a(stack_a, stack_b);
 	return (0);
 }

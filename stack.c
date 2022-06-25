@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:30:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/24 23:34:12 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/25 20:23:20 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	is_num(char *str)
 	while (str[i])
 	{
 		if (str[i] < 48 || str[i] > 57)
-			print_error_msg("error\nis_num");
+		{
+			if (str[i] != '-')
+				print_error_msg("error\nis_num");
+		}
 		i++;
 	}
 }
