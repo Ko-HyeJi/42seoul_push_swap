@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/27 01:41:30 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/27 03:09:09 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,15 @@ int	main(int argc, char **argv)
 		}
 		free(tmp);
 		i++;
+	}
+	if (stack_a->size < 6)
+	{
+		less_than_five(stack_a, stack_b);
+		// printf("a : \n");
+		// print_stack(stack_a);
+		// printf("b : \n");
+		// print_stack(stack_b);
+		return (0);
 	}
 	a_to_b(stack_a, stack_b);
 	// printf("\n");

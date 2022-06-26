@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/25 16:56:42 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/27 02:05:25 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ void	rrr(t_stack *stack_a, t_stack *stack_b);
 /* sort.c */
 void	a_to_b(t_stack *stack_a, t_stack *stack_b);
 void	b_to_a(t_stack *stack_a, t_stack *stack_b);
-
+void	less_than_five(t_stack *stack_a, t_stack *stack_b);
 
 #endif
