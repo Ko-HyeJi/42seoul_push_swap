@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/26 01:55:57 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/27 01:41:30 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,36 @@ void	print_stack(t_stack *stack)
 		printf("NULL\n");
 		return ;
 	}
-	printf("d  i\n");
-	printf("-  -\n");
 	t_list *curr;
-	curr = stack->top;
+	// printf("d  i\n");
+	// printf("-  -\n");
+	// curr = stack->top;
+	// while (curr != stack->btm)
+	// {
+	// 	printf("%d  %d\n", curr->data, curr->index);
+	// 	curr = curr->next;
+	// }
+	// printf("%d  %d\n", curr->data, curr->index);
+	int i = 0;
+	curr = stack->top;	
 	while (curr != stack->btm)
 	{
-		printf("%d  %d\n", curr->data, curr->index);
+		i = curr->index;
+		while (i > 0)
+		{
+			printf("|");
+			i--;
+		}
+		printf("\n");
 		curr = curr->next;
 	}
-	printf("%d  %d\n", curr->data, curr->index);
+	i = curr->index;
+	while (i > 0)
+	{
+		printf("|");
+		i--;
+	}
+	printf("\n");
 }
 
 void	print_error_msg(char *str)

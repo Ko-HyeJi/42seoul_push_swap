@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:25:42 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/26 01:59:09 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/27 01:41:19 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,20 @@ void	a_to_b(t_stack *stack_a, t_stack *stack_b)
 	while (stack_a->top != NULL)
 	{
 		if (stack_a->top->index < num)
+		{
 			pb(stack_a, stack_b);
+			num++;
+		}
 		else if (stack_a->top->index >= num && stack_a->top->index <= num + chunk)
 		{
 			pb(stack_a, stack_b);
 			rb(stack_b);
+			num++;
 		}
 		else if (stack_a->top->index > num + chunk)
 		{
 			ra(stack_a);
 		}
-		num++;
 	}
 }
 
