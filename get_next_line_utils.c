@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hyko <hyko@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:37:22 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 21:03:45 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 22:19:11 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
 
-	i = 0;
-	if (s == NULL)
-		return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	if (s == NULL)
+// 		return (0);
+// 	while (s[i] != '\0')
+// 		i++;
+// 	return (i);
+// }
 
 char	*ft_strdup(const char *s1)
 {

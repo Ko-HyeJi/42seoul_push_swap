@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hyko <hyko@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:30:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 21:49:47 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 22:35:10 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	push(t_stack *stack, int data)
 	stack->top->prev = node;
 	stack->btm->next = node;
 	stack->btm = node;
+	node->index = 0;
 }
 
 t_list	*pop(t_stack *stack)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hyko <hyko@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 21:53:16 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 22:34:30 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,35 +19,35 @@ void	print_stack(t_stack *stack)
 		printf("NULL\n");
 		return ;
 	}
+	// int i = 0;
 	t_list *curr;
-	// printf("d  i\n");
-	// printf("-  -\n");
-	// curr = stack->top;
-	// while (curr != stack->btm)
-	// {
-	// 	printf("%d  %d\n", curr->data, curr->index);
-	// 	curr = curr->next;
-	// }
-	// printf("%d  %d\n", curr->data, curr->index);
-	int i = 0;
-	curr = stack->top;	
+	printf("d  i\n");
+	printf("-  -\n");
+	curr = stack->top;
 	while (curr != stack->btm)
 	{
-		i = curr->index;
-		while (i > 0)
-		{
-			printf("|");
-			i--;
-		}
-		printf("\n");
+		printf("%d  %d\n", curr->data, curr->index);
 		curr = curr->next;
 	}
-	i = curr->index;
-	while (i > 0)
-	{
-		printf("|");
-		i--;
-	}
+	printf("%d  %d\n", curr->data, curr->index);
+	// curr = stack->top;	
+	// while (curr != stack->btm)
+	// {
+	// 	i = curr->index;
+	// 	while (i > 0)
+	// 	{
+	// 		printf("|");
+	// 		i--;
+	// 	}
+	// 	printf("\n");
+	// 	curr = curr->next;
+	// }
+	// i = curr->index;
+	// while (i > 0)
+	// {
+	// 	printf("|");
+	// 	i--;
+	// }
 	printf("\n");
 }
 
@@ -94,21 +94,22 @@ int	main(int argc, char **argv)
 		free(tmp);
 		i++;
 	}
-	if (stack_a->size < 6)
-	{
-		less_than_five(stack_a, stack_b);
-		// printf("a : \n");
-		// print_stack(stack_a);
-		// printf("b : \n");
-		// print_stack(stack_b);
-		exit(0);
-	}
-	a_to_b(stack_a, stack_b);
-	// printf("\n");
-	// print_stack(stack_a);
-	// printf("\n");
-	// print_stack(stack_b);
-	b_to_a(stack_a, stack_b);
-	system("leaks a.out");
+	// if (stack_a->size < 6)
+	// {
+	// 	less_than_five(stack_a, stack_b);
+	// 	// printf("a : \n");
+	// 	// print_stack(stack_a);
+	// 	// printf("b : \n");
+	// 	// print_stack(stack_b);
+	// 	exit(0);
+	// }
+	print_stack(stack_a);
+	// a_to_b(stack_a, stack_b);
+	// // printf("\n");
+	// // print_stack(stack_a);
+	// // printf("\n");
+	// // print_stack(stack_b);
+	// b_to_a(stack_a, stack_b);
+	// system("leaks a.out");
 	return (0);
 }
