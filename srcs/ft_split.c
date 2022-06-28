@@ -6,11 +6,11 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 23:18:21 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/24 23:18:31 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 17:22:08 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static char	**ft_malloc_error(char **str)
 {

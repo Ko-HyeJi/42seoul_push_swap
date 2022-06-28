@@ -6,11 +6,17 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:30:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/26 00:05:15 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 17:22:46 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+
+void	stack_element_init(t_stack *stack)
+{
+	stack->top = NULL;
+	stack->btm = NULL;
+}
 
 t_stack	*stack_init(void)
 {
@@ -19,8 +25,7 @@ t_stack	*stack_init(void)
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	stack->top = (t_list *)malloc(sizeof(t_list));
 	stack->btm = (t_list *)malloc(sizeof(t_list));
-	stack->top = NULL;
-	stack->btm = NULL;
+	stack_element_init(stack);
 	return (stack);
 }
 

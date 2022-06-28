@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/27 02:05:25 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 17:12:47 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	print_error_msg(char *str);
 
 /* stack.c */
 t_stack	*stack_init(void);
+void	stack_element_init(t_stack *stack);
 void	is_num(char *str);
 void	check_duplicate_and_indexing(t_stack *stack, int data);
 void	insert_first_node(t_stack *stack, int data);

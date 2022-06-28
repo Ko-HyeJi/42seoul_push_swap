@@ -6,11 +6,11 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/27 03:09:09 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 17:22:37 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	print_stack(t_stack *stack)
 {
@@ -100,7 +100,7 @@ int	main(int argc, char **argv)
 		// print_stack(stack_a);
 		// printf("b : \n");
 		// print_stack(stack_b);
-		return (0);
+		exit (0);
 	}
 	a_to_b(stack_a, stack_b);
 	// printf("\n");
@@ -108,5 +108,6 @@ int	main(int argc, char **argv)
 	// printf("\n");
 	// print_stack(stack_b);
 	b_to_a(stack_a, stack_b);
+	exit (0);
 	return (0);
 }

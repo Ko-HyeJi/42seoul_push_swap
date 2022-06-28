@@ -6,11 +6,11 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:25:42 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 15:31:00 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 17:22:42 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	check_direction(t_stack *stack_a, int num, int chunk)
 {

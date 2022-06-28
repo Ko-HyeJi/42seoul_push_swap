@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_rotate.c                                 :+:      :+:    :+:   */
+/*   operation_reverse_rotate.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/25 00:59:30 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/26 22:14:47 by hyko             ###   ########.fr       */
+/*   Created: 2022/06/25 00:59:26 by hyko              #+#    #+#             */
+/*   Updated: 2022/06/28 17:22:20 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ra(t_stack *stack_a)
+void	rra(t_stack *stack_a)
 {
-	write(1, "ra\n", 3);
 	if (stack_a->top != NULL)
 	{
-		stack_a->btm = stack_a->top;
-		stack_a->top = stack_a->top->next;
+		stack_a->top = stack_a->btm;
+		stack_a->btm = stack_a->btm->prev;
 	}
+	write(1, "rra\n", 4);
 }
 
-void	rb(t_stack *stack_b)
+void	rrb(t_stack *stack_b)
 {
-	write(1, "rb\n", 3);
 	if (stack_b->top != NULL)
 	{
-		stack_b->btm = stack_b->top;
-		stack_b->top = stack_b->top->next;
+		stack_b->top = stack_b->btm;
+		stack_b->btm = stack_b->btm->prev;
 	}
+	write(1, "rrb\n", 4);
 }
 
-void	rr(t_stack *stack_a, t_stack *stack_b)
+void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
-	write(1, "rr\n", 3);
 	if (stack_a->top != NULL)
 	{
-		stack_a->btm = stack_a->top;
-		stack_a->top = stack_a->top->next;
+		stack_a->top = stack_a->btm;
+		stack_a->btm = stack_a->btm->prev;
 	}
 	if (stack_b->top != NULL)
 	{
-		stack_b->btm = stack_b->top;
-		stack_b->top = stack_b->top->next;
+		stack_b->top = stack_b->btm;
+		stack_b->btm = stack_b->btm->prev;
 	}
+	write(1, "rrr\n", 4);
 }

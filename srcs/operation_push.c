@@ -6,15 +6,14 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 00:59:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/26 22:14:29 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 17:22:15 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
-	write(1, "pa\n", 3);
 	t_list	*node;
 
 	if (stack_b->top != NULL)
@@ -37,17 +36,14 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 		}
 	}
 	if (stack_a->top == stack_b->top)
-	{
-		stack_b->top = NULL;
-		stack_b->btm = NULL;
-	}
+		stack_element_init(stack_b);
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
-	write(1, "pb\n", 3);
 	t_list	*node;
-	
+
 	if (stack_a->top != NULL)
 	{
 		node = pop(stack_a);
@@ -68,8 +64,6 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 		}	
 	}
 	if (stack_a->top == stack_b->top)
-	{
-		stack_a->top = NULL;
-		stack_a->btm = NULL;
-	}
+		stack_element_init(stack_a);
+	write(1, "pb\n", 3);
 }
