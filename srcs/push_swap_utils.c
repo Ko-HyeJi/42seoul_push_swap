@@ -1,14 +1,14 @@
 #include "../push_swap.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 		i++;
+// 	return (i);
+// }
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -52,4 +52,10 @@ long long	ft_atol(const char *str)
 		i++;
 	}
 	return (result * sign);
+}
+
+void	print_error_msg(char *str)
+{
+	printf("%s\n", str);
+	exit(0);
 }

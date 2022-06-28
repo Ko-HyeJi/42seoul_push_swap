@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:25:42 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 17:22:42 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 17:27:41 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ void	find_num_and_push(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void	sort_three_node(t_stack *stack_a, t_stack *stack_b)
+void	sort_three_node(t_stack *stack_a)
 {
 	int	size;
 	
@@ -166,58 +166,18 @@ void	less_than_five(t_stack *stack_a, t_stack *stack_b)
 	if (stack_a->size == 2 && stack_a->top->index == 1)
 		sa(stack_a);
 	if (stack_a->size == 3)
-		sort_three_node(stack_a, stack_b);
+		sort_three_node(stack_a);
 	if (stack_a->size == 4)
 	{
 		find_num_and_push(stack_a, stack_b);
-		sort_three_node(stack_a, stack_b);
+		sort_three_node(stack_a);
 		pa(stack_a, stack_b);
 	}
 	if (stack_a->size == 5)
 	{
 		find_num_and_push(stack_a, stack_b);
-		sort_three_node(stack_a, stack_b);
+		sort_three_node(stack_a);
 		pa(stack_a, stack_b);
 		pa(stack_a, stack_b);
 	}
 }
-
-
-
-
-// void	less_than_five(t_stack *stack_a, t_stack *stack_b)
-// {
-// 	t_list	*curr;
-// 	int		num;
-// 	int		cnt;
-	
-// 	num = 0;
-// 	while (stack_a->size - num > 2)
-// 	{
-// 		curr = stack_a->top;
-// 		cnt = 0;
-// 		while (curr->index != num)
-// 		{
-// 			curr = curr->next;
-// 			cnt++;
-// 		}
-// 		if (cnt <= (stack_a->size - num) / 2)
-// 		{
-// 			while (stack_a->top->index != num)
-// 				ra(stack_a);
-// 		}
-// 		else if (cnt > (stack_a->size - num) / 2)
-// 		{
-// 			while (stack_a->top->index != num)
-// 				rra(stack_a);
-// 		}
-// 		pb(stack_a, stack_b);
-// 		num++;
-// 	}
-// 	// printf("stack_a->top->index : %d\n", stack_a->top->index);
-// 	// printf("stack_a->size : %d\n", stack_a->size);
-// 	if (stack_a->top->index == stack_a->size - 1)
-// 		sa(stack_a);
-// 	while (stack_b->top != NULL)
-// 		pa(stack_a, stack_b);
-// }

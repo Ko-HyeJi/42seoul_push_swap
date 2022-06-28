@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 17:22:37 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 20:57:06 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void	print_stack(t_stack *stack)
 	printf("\n");
 }
 
-void	print_error_msg(char *str)
-{
-	printf("%s\n", str);
-	exit(0);
-}
+// void	print_error_msg(char *str)
+// {
+// 	printf("%s\n", str);
+// 	exit(0);
+// }
 
 int	main(int argc, char **argv)
 {
@@ -100,7 +100,7 @@ int	main(int argc, char **argv)
 		// print_stack(stack_a);
 		// printf("b : \n");
 		// print_stack(stack_b);
-		exit (0);
+		exit(0);
 	}
 	a_to_b(stack_a, stack_b);
 	// printf("\n");
@@ -108,6 +108,6 @@ int	main(int argc, char **argv)
 	// printf("\n");
 	// print_stack(stack_b);
 	b_to_a(stack_a, stack_b);
-	exit (0);
+	exit(0);
 	return (0);
 }

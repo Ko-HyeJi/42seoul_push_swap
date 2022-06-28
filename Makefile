@@ -6,7 +6,7 @@
 #    By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 19:49:42 by hyko              #+#    #+#              #
-#    Updated: 2022/06/28 17:21:52 by hyko             ###   ########.fr        #
+#    Updated: 2022/06/28 19:18:34 by hyko             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,5 +22,6 @@ operation_rotate.c\
 operation_reverse_rotate.c\
 sort.c\)
 
+
 all :
-	cc $(SRCS)
+	cc -Wall -Wextra -Werror $(SRCS)

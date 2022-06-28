@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 17:12:47 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 20:27:02 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+
+# define BUFFER_SIZE	100
 
 # define INT_MAX	2147483647
 # define INT_MIN	-2147483648
@@ -36,7 +38,7 @@ typedef	struct s_stack
 }	t_stack;
 
 /* ft_split.c */
-static char	**ft_malloc_error(char **str);
+// static char	**ft_malloc_error(char **str);
 int	word_count(char const *s, char c);
 int	word_len(char const *s, char c);
 char	**ft_split(char const *s, char c);
@@ -76,4 +78,16 @@ void	a_to_b(t_stack *stack_a, t_stack *stack_b);
 void	b_to_a(t_stack *stack_a, t_stack *stack_b);
 void	less_than_five(t_stack *stack_a, t_stack *stack_b);
 
+/* get_next_line_utils.c */
+size_t	ft_strlen(const char *s);
+char	*ft_strdup(const char *s1);
+char	*ft_substr(char const	*s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+
+/* get_next_line.c */
+char	*get_next_line(int fd);
+int		gnl_find_newline(char *read_line);
+char	*gnl_read_line(int fd);
+char	*gnl_expand_backup(char *backup, int fd);
+char	*gnl_cut_backup(char *backup, char *return_line);
 #endif
