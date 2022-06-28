@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 20:57:06 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 21:53:16 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int	main(int argc, char **argv)
 				push(stack_a, data);
 			check_duplicate_and_indexing(stack_a, data);
 			stack_a->size++;
+			free(tmp[j]);
 			j++;
 		}
 		free(tmp);
@@ -108,6 +109,6 @@ int	main(int argc, char **argv)
 	// printf("\n");
 	// print_stack(stack_b);
 	b_to_a(stack_a, stack_b);
-	exit(0);
+	system("leaks a.out");
 	return (0);
 }

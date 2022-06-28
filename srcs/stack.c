@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:30:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 17:22:46 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/28 21:49:47 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ t_stack	*stack_init(void)
 	t_stack	*stack;
 	
 	stack = (t_stack *)malloc(sizeof(t_stack));
-	stack->top = (t_list *)malloc(sizeof(t_list));
-	stack->btm = (t_list *)malloc(sizeof(t_list));
+	//stack->top = (t_list *)malloc(sizeof(t_list));
+	//stack->btm = (t_list *)malloc(sizeof(t_list));
 	stack_element_init(stack);
 	return (stack);
 }
