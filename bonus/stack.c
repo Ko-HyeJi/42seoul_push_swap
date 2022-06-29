@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyko <hyko@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:30:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 22:35:10 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/29 19:18:38 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	stack_element_init(t_stack *stack)
 {
@@ -88,7 +88,6 @@ void	push(t_stack *stack, int data)
 	stack->top->prev = node;
 	stack->btm->next = node;
 	stack->btm = node;
-	node->index = 0;
 }
 
 t_list	*pop(t_stack *stack)

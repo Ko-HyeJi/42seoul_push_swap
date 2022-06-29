@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_push_bonus.c                             :+:      :+:    :+:   */
+/*   operation_push.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 00:59:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 20:55:44 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/29 19:18:38 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
@@ -37,7 +37,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	}
 	if (stack_a->top == stack_b->top)
 		stack_element_init(stack_b);
-	// write(1, "pa\n", 3);
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
@@ -65,5 +65,5 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	}
 	if (stack_a->top == stack_b->top)
 		stack_element_init(stack_a);
-	// write(1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }

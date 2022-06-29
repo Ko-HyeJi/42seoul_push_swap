@@ -6,11 +6,11 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 00:59:26 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 20:55:49 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/29 19:18:46 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	rra(t_stack *stack_a)
 {

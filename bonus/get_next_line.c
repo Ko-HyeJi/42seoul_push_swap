@@ -6,11 +6,11 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:37:29 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 19:19:05 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/29 19:18:46 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 char	*get_next_line(int fd)
 {

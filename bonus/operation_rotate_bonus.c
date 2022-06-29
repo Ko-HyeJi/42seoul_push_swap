@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_rotate.c                                 :+:      :+:    :+:   */
+/*   operation_rotate_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 00:59:30 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 17:22:24 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/29 19:18:46 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	ra(t_stack *stack_a)
 {
@@ -19,7 +19,7 @@ void	ra(t_stack *stack_a)
 		stack_a->btm = stack_a->top;
 		stack_a->top = stack_a->top->next;
 	}
-	write(1, "ra\n", 3);
+	// write(1, "ra\n", 3);
 }
 
 void	rb(t_stack *stack_b)
@@ -29,7 +29,7 @@ void	rb(t_stack *stack_b)
 		stack_b->btm = stack_b->top;
 		stack_b->top = stack_b->top->next;
 	}
-	write(1, "rb\n", 3);
+	// write(1, "rb\n", 3);
 }
 
 void	rr(t_stack *stack_a, t_stack *stack_b)
@@ -44,5 +44,5 @@ void	rr(t_stack *stack_a, t_stack *stack_b)
 		stack_b->btm = stack_b->top;
 		stack_b->top = stack_b->top->next;
 	}
-	write(1, "rr\n", 3);
+	// write(1, "rr\n", 3);
 }

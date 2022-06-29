@@ -6,11 +6,11 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:25:42 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/28 17:27:41 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/29 19:18:38 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 int	check_direction(t_stack *stack_a, int num, int chunk)
 {
@@ -180,4 +180,5 @@ void	less_than_five(t_stack *stack_a, t_stack *stack_b)
 		pa(stack_a, stack_b);
 		pa(stack_a, stack_b);
 	}
+	exit(0);
 }
