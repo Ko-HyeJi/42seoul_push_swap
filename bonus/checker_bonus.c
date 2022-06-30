@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:35:03 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:58:28 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 20:03:35 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,18 @@ void	check_is_sorted(t_stack *stack_a, t_stack *stack_b)
 	t_list	*curr;
 
 	if (stack_b->top != NULL)
+	{
 		write(1, "KO\n", 3);
+		exit(0);
+	}
 	curr = stack_a->top;
 	while (curr != stack_a->btm)
 	{
 		if (curr->index > curr->next->index)
+		{
 			write(1, "KO\n", 3);
+			exit(0);
+		}
 		curr = curr->next;
 	}
 	write(1, "OK\n", 3);
