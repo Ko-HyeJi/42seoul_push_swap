@@ -6,11 +6,11 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:35:03 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 15:41:35 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 16:54:09 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include/push_swap_bonus.h"
 
 void	exe_command(t_stack *stack_a, t_stack *stack_b, char *cmd)
 {
@@ -55,11 +55,13 @@ void	check_is_sorted(t_stack *stack_a, t_stack *stack_b)
 	exit(0);
 }
 
-void	parse_single_argv(char **tmp, size_t i, t_stack *stack)
+void	parsing(int argc, char **argv, t_stack *stack, int i)
 {
-	size_t		j;
+	char		**tmp;
+	int			j;
 	long long	data;
 
+	tmp = ft_split(argv[i], ' ');
 	j = 0;
 	while (tmp[j])
 	{
@@ -75,40 +77,32 @@ void	parse_single_argv(char **tmp, size_t i, t_stack *stack)
 		stack->size++;
 		j++;
 	}
-}
-
-void	parsing(int argc, char **argv, t_stack *stack)
-{
-	char		**tmp;
-	size_t		i;
-
-	i = 1;
-	while (i < argc)
-	{
-		tmp = ft_split(argv[i], ' ');
-		parse_single_argv(tmp, i, stack);
-		free(tmp);
-		i++;
-	}
+	free(tmp);
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	int		i;
 	char	*cmd;
 
 	stack_a = stack_init();
 	stack_b = stack_init();
 	if (argc < 2)
 		print_error_msg("error\nneed data");
-	parsing(argc, argv, stack_a);
+	i = 1;
+	while (i < argc)
+	{
+		parsing(argc, argv, stack_a, i);
+		i++;
+	}
 	while (1)
 	{
 		cmd = get_next_line(0);
 		if (cmd == NULL)
 			check_is_sorted(stack_a, stack_b);
 		exe_command(stack_a, stack_b, cmd);
-	}	
+	}
 	return (0);
 }

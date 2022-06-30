@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_less_than_five.c                              :+:      :+:    :+:   */
+/*   sort_less_than_five_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:59:39 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/29 20:31:32 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 16:55:02 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include/push_swap_bonus.h"
 
 void	find_num_and_push(t_stack *stack_a, t_stack *stack_b, int num)
 {
