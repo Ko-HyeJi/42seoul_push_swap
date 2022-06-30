@@ -6,7 +6,7 @@
 #    By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 19:49:42 by hyko              #+#    #+#              #
-#    Updated: 2022/06/30 16:01:26 by hyko             ###   ########.fr        #
+#    Updated: 2022/06/30 20:05:29 by hyko             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,15 +49,15 @@ parsing_bonus.c)
 
 OBJ_BN = $(SRC_BN:.c=.o)
 
-all : $(NAME)
-
-bonus : $(BONUS)
-
 $(NAME) : $(OBJ)
 	$(CC) $(CFLAG) -o $@ $^
 
 $(BONUS) : $(OBJ_BN)
 	$(CC) $(CFLAG) -o $@ $^
+	
+all : $(NAME)
+
+bonus : $(BONUS)
 
 clean :
 	$(RM) $(OBJ) $(OBJ_BN)
