@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 20:07:03 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 16:14:21 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 19:29:15 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ long long	ft_atol(const char *str)
 
 void	print_error_msg(char *str)
 {
-	printf("%s\n", str);
+	write(1, &str, ft_strlen(str));
+	write(1, "\n", 1);
 	exit(0);
 }
