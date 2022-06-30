@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:19:31 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 19:45:12 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void		check_duplicate_and_indexing(t_stack *stack, int data);
 /* push_swap_utils.c */
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 long long	ft_atol(const char *str);
-void		print_error_msg(char *str);
+void		print_error(void);
 
 /* sort_less_than_five.c */
 void		find_num_and_push(t_stack *stack_a, t_stack *stack_b, int num);

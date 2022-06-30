@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:30:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:30:24 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 19:46:55 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	insert_first_node(t_stack *stack, int data)
 
 	node = (t_list *)malloc(sizeof(t_list));
 	if (node == NULL)
-		print_error_msg("error\nfailed malloc");
+		print_error();
 	node->data = data;
 	node->prev = node;
 	node->next = node;
@@ -47,7 +47,7 @@ void	push(t_stack *stack, int data)
 
 	node = (t_list *)malloc(sizeof(t_list));
 	if (node == NULL)
-		print_error_msg("error\nfailed malloc");
+		print_error();
 	node->data = data;
 	node->next = stack->top;
 	node->prev = stack->btm;

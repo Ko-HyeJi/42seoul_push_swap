@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:35:03 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:23:18 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 19:49:27 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ void	check_is_sorted(t_stack *stack_a, t_stack *stack_b)
 	t_list	*curr;
 
 	if (stack_b->top != NULL)
-		print_error_msg("KO");
+		write(1, "KO\n", 3);
 	curr = stack_a->top;
 	while (curr != stack_a->btm)
 	{
 		if (curr->index > curr->next->index)
-			print_error_msg("KO");
+			write(1, "KO\n", 3);
 		curr = curr->next;
 	}
 	write(1, "OK\n", 3);
@@ -62,13 +62,15 @@ void	parsing(int argc, char **argv, t_stack *stack, int i)
 	long long	data;
 
 	tmp = ft_split(argv[i], ' ');
+	if (tmp[0] == NULL)
+		print_error();
 	j = 0;
 	while (tmp[j])
 	{
 		is_num(tmp[j]);
 		data = ft_atol(tmp[j]);
 		if (data < INT_MIN || data > INT_MAX)
-			print_error_msg("error\nout of number range");
+			print_error();
 		if (i == 1 && j == 0)
 			insert_first_node(stack, data);
 		else
@@ -90,7 +92,7 @@ int	main(int argc, char **argv)
 	stack_a = stack_init();
 	stack_b = stack_init();
 	if (argc < 2)
-		print_error_msg("error\nneed data");
+		print_error();
 	i = 1;
 	while (i < argc)
 	{

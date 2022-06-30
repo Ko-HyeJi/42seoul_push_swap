@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:22:58 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 19:47:58 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ void	parsing(t_stack *stack, char **tmp, int i, int j)
 {
 	long long	data;
 
+	if (tmp[0] == NULL)
+		print_error();
 	j = 0;
 	while (tmp[j])
 	{
 		is_num(tmp[j]);
 		data = ft_atol(tmp[j]);
 		if (data < INT_MIN || data > INT_MAX)
-			print_error_msg("error\nout of number range");
+			print_error();
 		if (i == 1 && j == 0)
 			insert_first_node(stack, data);
 		else
@@ -58,7 +60,7 @@ int	main(int argc, char **argv)
 	int		j;
 
 	if (argc < 2)
-		print_error_msg("error\nneed data");
+		print_error();
 	stack_a = stack_init();
 	stack_b = stack_init();
 	i = 1;

@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 19:27:22 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:28:36 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 19:48:04 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	is_num(char *str)
 	while (str[i])
 	{
 		if (str[i] < 48 || str[i] > 57)
-			print_error_msg("error\ninvalid number");
+			print_error();
 		i++;
 	}
 }
@@ -35,7 +35,7 @@ void	check_duplicate_and_indexing(t_stack *stack, int data)
 	while (curr->next != stack->top)
 	{
 		if (curr->data == data)
-			print_error_msg("error\nduplicate number");
+			print_error();
 		else if (curr->data < data)
 			stack->btm->index++;
 		else if (curr->data > data)
