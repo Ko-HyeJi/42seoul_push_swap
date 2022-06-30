@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:35:03 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:49:27 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 19:58:28 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	parsing(int argc, char **argv, t_stack *stack, int i)
 			push(stack, data);
 		check_duplicate_and_indexing(stack, data);
 		stack->size++;
+		free(tmp[j]);
 		j++;
 	}
 	free(tmp);
