@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:35:03 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/29 19:18:38 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/30 15:41:35 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,55 +43,66 @@ void	check_is_sorted(t_stack *stack_a, t_stack *stack_b)
 	t_list	*curr;
 
 	if (stack_b->top != NULL)
-		print_error_msg("KO\n");
+		print_error_msg("KO");
 	curr = stack_a->top;
 	while (curr != stack_a->btm)
 	{
 		if (curr->index > curr->next->index)
-			print_error_msg("KO\n");
+			print_error_msg("KO");
 		curr = curr->next;
 	}
 	write(1, "OK\n", 3);
 	exit(0);
 }
 
+void	parse_single_argv(char **tmp, size_t i, t_stack *stack)
+{
+	size_t		j;
+	long long	data;
+
+	j = 0;
+	while (tmp[j])
+	{
+		is_num(tmp[j]);
+		data = ft_atol(tmp[j]);
+		if (data < INT_MIN || data > INT_MAX)
+			print_error_msg("error\nint");
+		if (i == 1 && j == 0)
+			insert_first_node(stack, data);
+		else
+			push(stack, data);
+		check_duplicate_and_indexing(stack, data);
+		stack->size++;
+		j++;
+	}
+}
+
+void	parsing(int argc, char **argv, t_stack *stack)
+{
+	char		**tmp;
+	size_t		i;
+
+	i = 1;
+	while (i < argc)
+	{
+		tmp = ft_split(argv[i], ' ');
+		parse_single_argv(tmp, i, stack);
+		free(tmp);
+		i++;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	char	**tmp;
-	int		data;
-	int		i;
-	int		j;
 	char	*cmd;
-	
+
 	stack_a = stack_init();
 	stack_b = stack_init();
 	if (argc < 2)
 		print_error_msg("error\nneed data");
-	
-	i = 1;
-	while (i < argc)
-	{
-		j = 0;
-		tmp = ft_split(argv[i], ' ');
-		while (tmp[j])
-		{
-			is_num(tmp[j]);
-			data = ft_atol(tmp[j]);
-			if (data < INT_MIN || data > INT_MAX)
-				print_error_msg("error\nint");
-			if (i == 1 && j == 0)
-				insert_first_node(stack_a, data);
-			else
-				push(stack_a, data);
-			check_duplicate_and_indexing(stack_a, data);
-			stack_a->size++;
-			j++;
-		}
-		free(tmp);
-		i++;
-	}
+	parsing(argc, argv, stack_a);
 	while (1)
 	{
 		cmd = get_next_line(0);

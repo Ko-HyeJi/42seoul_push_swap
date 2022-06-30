@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 00:59:26 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/29 19:18:46 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/29 21:04:27 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	rra(t_stack *stack_a)
 		stack_a->top = stack_a->btm;
 		stack_a->btm = stack_a->btm->prev;
 	}
-	// write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack *stack_b)
@@ -29,7 +28,6 @@ void	rrb(t_stack *stack_b)
 		stack_b->top = stack_b->btm;
 		stack_b->btm = stack_b->btm->prev;
 	}
-	// write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack *stack_a, t_stack *stack_b)
@@ -44,5 +42,4 @@ void	rrr(t_stack *stack_a, t_stack *stack_b)
 		stack_b->top = stack_b->btm;
 		stack_b->btm = stack_b->btm->prev;
 	}
-	// write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 00:59:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/29 19:18:46 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/29 21:04:08 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	}
 	if (stack_a->top == stack_b->top)
 		stack_element_init(stack_b);
-	// write(1, "pa\n", 3);
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
@@ -65,5 +64,4 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	}
 	if (stack_a->top == stack_b->top)
 		stack_element_init(stack_a);
-	// write(1, "pb\n", 3);
 }

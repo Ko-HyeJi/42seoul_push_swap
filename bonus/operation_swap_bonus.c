@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 00:59:33 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/29 19:18:46 by hyko             ###   ########.fr       */
+/*   Updated: 2022/06/29 21:04:33 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	sa(t_stack *stack_a)
 	tmp_i = stack_a->top->index;
 	stack_a->top->index = stack_a->top->next->index;
 	stack_a->top->next->index = tmp_i;
-	// write(1, "sa\n", 3);
 }
 
 void	sb(t_stack *stack_b)
@@ -37,7 +36,6 @@ void	sb(t_stack *stack_b)
 	tmp_i = stack_b->top->index;
 	stack_b->top->index = stack_b->top->next->index;
 	stack_b->top->next->index = tmp_i;
-	// write(1, "sb\n", 3);
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
@@ -57,5 +55,4 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 	tmp_i = stack_b->top->index;
 	stack_b->top->index = stack_b->top->next->index;
 	stack_b->top->next->index = tmp_i;
-	// write(1, "ss\n", 3);
 }

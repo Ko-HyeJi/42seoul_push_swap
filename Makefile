@@ -6,7 +6,7 @@
 #    By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 19:49:42 by hyko              #+#    #+#              #
-#    Updated: 2022/06/29 20:18:20 by hyko             ###   ########.fr        #
+#    Updated: 2022/06/29 21:21:46 by hyko             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,10 @@ operation_swap_bonus.c\
 operation_rotate_bonus.c\
 operation_reverse_rotate_bonus.c\
 stack.c\
-push_swap_utils.c\
+push_swap_utils_bonus.c\
 ft_split.c\
-sort.c)
+sort.c\
+parsing.c)
 
 OBJ_BN = $(SRC_BN:.c=.o)
 
