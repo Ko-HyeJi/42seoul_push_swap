@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:45:12 by hyko             ###   ########.fr       */
+/*   Updated: 2022/07/01 13:41:45 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,19 +87,6 @@ void		check_duplicate_and_indexing(t_stack *stack, int data);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 long long	ft_atol(const char *str);
 void		print_error(void);
-
-/* sort_less_than_five.c */
-void		find_num_and_push(t_stack *stack_a, t_stack *stack_b, int num);
-void		sort_three_node(t_stack *stack_a, int size);
-void		less_than_five(t_stack *stack_a, t_stack *stack_b);
-
-/* sort.c */
-int			check_direction(t_stack *stack_a, int num, int chunk);
-void		atob_next_step(
-				t_stack *stack_a, t_stack *stack_b, int num, int chunk);
-void		a_to_b(t_stack *stack_a, t_stack *stack_b);
-void		btoa_next_step(t_stack *stack_a, t_stack *stack_b, int num);
-void		b_to_a(t_stack *stack_a, t_stack *stack_b);
 
 /* stack.c */
 void		stack_element_init(t_stack *stack);
