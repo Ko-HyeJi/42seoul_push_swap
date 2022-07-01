@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:41:49 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:58:32 by hyko             ###   ########.fr       */
+/*   Updated: 2022/07/01 13:31:16 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 	int		j;
 
 	if (argc < 2)
-		print_error();
+		exit(0);
 	stack_a = stack_init();
 	stack_b = stack_init();
 	i = 1;
