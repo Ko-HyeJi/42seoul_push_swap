@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 18:35:03 by hyko              #+#    #+#             */
-/*   Updated: 2022/07/01 13:30:57 by hyko             ###   ########.fr       */
+/*   Updated: 2022/07/01 13:59:58 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 void	exe_command(t_stack *stack_a, t_stack *stack_b, char *cmd)
 {
-	if (cmd[0] == 's' && cmd[1] == 'a')
+	if (ft_strcmp(cmd, "sa\n") == 0)
 		sa(stack_a);
-	else if (cmd[0] == 's' && cmd[1] == 'b')
+	else if (ft_strcmp(cmd, "sb\n") == 0)
 		sb(stack_b);
-	else if (cmd[0] == 'p' && cmd[1] == 'a')
+	else if (ft_strcmp(cmd, "pa\n") == 0)
 		pa(stack_a, stack_b);
-	else if (cmd[0] == 'p' && cmd[1] == 'b')
+	else if (ft_strcmp(cmd, "pb\n") == 0)
 		pb(stack_a, stack_b);
-	else if (cmd[0] == 'r' && cmd[1] == 'a')
+	else if (ft_strcmp(cmd, "ra\n") == 0)
 		ra(stack_a);
-	else if (cmd[0] == 'r' && cmd[1] == 'b')
+	else if (ft_strcmp(cmd, "rb\n") == 0)
 		rb(stack_b);
-	else if (cmd[0] == 'r' && cmd[1] == 'r' && cmd[2] == 'a')
-		rra(stack_a);
-	else if (cmd[0] == 'r' && cmd[1] == 'r' && cmd[2] == 'b')
-		rrb(stack_b);
-	else if (cmd[0] == 'r' && cmd[1] == 'r' && cmd[2] == 'r')
-		rrr(stack_a, stack_b);
-	else if (cmd[0] == 'r' && cmd[1] == 'r')
+	else if (ft_strcmp(cmd, "rr\n") == 0)
 		rr(stack_a, stack_b);
+	else if (ft_strcmp(cmd, "rra\n") == 0)
+		rra(stack_a);
+	else if (ft_strcmp(cmd, "rrb\n") == 0)
+		rrb(stack_b);
+	else if (ft_strcmp(cmd, "rrr\n") == 0)
+		rrr(stack_a, stack_b);
 	else
-		exit(0);
+		print_error();
 }
 
 void	check_is_sorted(t_stack *stack_a, t_stack *stack_b)

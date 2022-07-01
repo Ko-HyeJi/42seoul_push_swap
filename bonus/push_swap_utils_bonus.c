@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 20:07:03 by hyko              #+#    #+#             */
-/*   Updated: 2022/07/01 13:31:35 by hyko             ###   ########.fr       */
+/*   Updated: 2022/07/01 13:45:46 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,19 @@ void	print_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(0);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] == s2[i])
+			i++;
+		else
+			break ;
+	}
+	return (s1[i] - s2[i]);
 }
