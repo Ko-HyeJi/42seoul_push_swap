@@ -6,7 +6,7 @@
 /*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:30:23 by hyko              #+#    #+#             */
-/*   Updated: 2022/06/30 19:46:55 by hyko             ###   ########.fr       */
+/*   Updated: 2022/07/03 20:09:03 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	insert_first_node(t_stack *stack, int data)
 	node->next = node;
 	stack->top = node;
 	stack->btm = node;
+	node->index = 0;
 }
 
 void	push(t_stack *stack, int data)
@@ -54,6 +55,7 @@ void	push(t_stack *stack, int data)
 	stack->top->prev = node;
 	stack->btm->next = node;
 	stack->btm = node;
+	node->index = 0;
 }
 
 t_list	*pop(t_stack *stack)
