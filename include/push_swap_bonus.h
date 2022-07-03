@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyko <hyko@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hyko <hyko@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:35 by hyko              #+#    #+#             */
-/*   Updated: 2022/07/01 14:59:20 by hyko             ###   ########.fr       */
+/*   Updated: 2022/07/03 16:03:33 by hyko             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_BONUS_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 
 # define BUFFER_SIZE	100
